@@ -22,26 +22,10 @@ class Student extends MX_Controller
 	function index()
 	{
 		$id=$this->ion_auth->get_user_id();
-		if($this->stud_model->check_lock($id))
-		{
-			$this->stud_model->lock_it($id);
-		}
-		if($this->stud_model->check_approval($id))
-		{
-			$data=$this->get_user_data();
-			$this->load->view('stud_dash',$data);
-			$this->load->view('stud_rules');
-			$this->load->view('footer');
-
-		}
-		else
-		{
-			$data=$this->get_user_data();
-			$this->load->view('stud_dash_temp',$data);
-			$this->load->view('stud_rules');
-			$this->load->view('footer');
-
-		}
+		$data=$this->get_user_data();
+		$this->load->view('stud_dash',$data);
+		$this->load->view('stud_rules');
+		$this->load->view('footer');
 		
 	}
 
@@ -55,13 +39,13 @@ class Student extends MX_Controller
 		$this->load->view('footer',$data);
 	}
 
-	function show_calender()
+	function post_data()
 	{
 		$data=$this->stud_model->get_user_info();
 		$data['id']=$this->ion_auth->get_user_id();
-		$data['object']=$this->stud_model->get_events();
+		$data['object']=$this->stud_model->put_data();
 		$this->load->view('stud_dash',$data);
-		$this->load->view('customized_calender',$data);
+		$this->load->view('',$data);
 		$this->load->view('footer');
 	}
 
@@ -72,7 +56,6 @@ class Student extends MX_Controller
 
 	function get_user_data()
 	{
-		$data=$this->stud_model->get_user_info();
 		$data['id']=$this->ion_auth->get_user_id();
 		return $data;
 	}
@@ -96,13 +79,13 @@ class Student extends MX_Controller
 		}
 	}
 
-	function companies()
+	function complain_submit()
 	{
-		$data=$this->stud_model->get_profile_info();
+		//$data=$this->stud_model->get_profile_info();
 		$data['id']=$this->ion_auth->get_user_id();
-		$data['companies'] = $this->cod_model->get_all_companies();
+		$data['complaints']=$this->stud_model->get_comp();
 		$this->load->view('stud_dash',$data);
-		$this->load->view('companies',$data);
+		$this->load->view('submit_form',$data);
 		$this->load->view('footer');
 	}
 

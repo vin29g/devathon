@@ -131,14 +131,14 @@
                     
                     <li class="bold active"><a href="<?php echo base_url('/admin')?>" class="waves-effect waves-cyan"><i class="mdi-action-home"></i>Home</a>
                     </li>
-                    <li class="bold">
+<!--                     <li class="bold">
                         <a href="<?php echo base_url('admin/unapproved_companies')?>" class="waves-effect waves-cyan"><i class="mdi-communication-business"></i>Approve Company
                             <?php if($unapproved_number!==0){ ?>
                             <span class="new badge" id="unapproved_badge"><?php echo $unapproved_number; ?></span>
                             <?php } ?>
                         </a>
-                    </li>
-                    <li class="bold"><a href="<?php echo base_url('/admin/show_calender') ?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>
+                    </li> -->
+<!--                     <li class="bold"><a href="<?php echo base_url('/admin/show_calender') ?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>
                     </li>
                     <li class="bold"><a href="<?php echo base_url('/admin/all_coordinators') ?>" class="waves-effect waves-cyan"><i class="mdi-action-assignment-ind"></i> Co-ordinators</a>
                     </li>
@@ -147,14 +147,14 @@
                     <li class="bold"><a href="<?php echo base_url('/admin/deactivate_req') ?>" class="waves-effect waves-cyan"><i class="mdi-action-lock-open"></i>Deactivation Requests</a>
                     </li>
                     <li class="bold"><a href="<?php echo base_url('/admin/feedbacks') ?>" class="waves-effect waves-cyan"><i class="mdi-action-lock-open"></i>Feedbacks</a>
-                    </li>
+                    </li> -->
                     <li class="no-padding">
                         <ul class="collapsible collapsible-accordion">
                             <li class="bold">
                                 <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-child"></i> Users management</a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="<?php echo base_url('auth/create_user')?>" class="waves-effect waves-cyan">
+                                        <li><a href="<?php echo base_url('admin/create_user')?>" class="waves-effect waves-cyan">
                                             <i class="mdi-social-person-add"></i>Create User</a>
                                         </li>
                                         <li><a href="<?php echo base_url('auth/manageuser')?>" class="waves-effect waves-cyan">

@@ -59,7 +59,7 @@
 				<nav class="cyan">
 					<div class="nav-wrapper">
 						<ul class="left">
-							<li><h1 class="logo-wrapper"><a href="<?php echo base_url('/student');?>" class="brand-logo darken-1">TAPS</a></h1></li>
+							<li><h1 class="logo-wrapper"><a href="<?php echo base_url('/student');?>" class="brand-logo darken-1">CMS</a></h1></li>
 						</ul>
 						<div class="header-search-wrapper hide-on-med-and-down">
 							<i class="mdi-action-search"></i>
@@ -110,49 +110,18 @@
 										<li><a href="<?php echo base_url('auth/logout')?>"><i class="mdi-hardware-keyboard-tab"></i>Logout</a>
 										</li>
 									</ul>
-									<a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="layout01.html#" data-activates="profile-dropdown"><?php echo $first_name?><i class="mdi-navigation-arrow-drop-down right"></i></a>
-									<p class="user-roal"><?php echo $roll_number ?> </p>
+									<a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="layout01.html#" data-activates="profile-dropdown"><i class="mdi-navigation-arrow-drop-down right"></i></a>
+									<p class="user-roal"> </p>
 								</div>
 							</div>
 						</li>
-						<li class="bold "><a href="<?php echo base_url('/student/news_all')?>" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>News</a>
+						<li class="bold "><a href="<?php echo base_url('/student/complain_submit')?>" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Submit Complaint</a>
 						</li>
-						<li class="bold "><a href="<?php echo base_url('/student/show_calender')?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i>Calender</a>
+						<li class="bold "><a href="<?php echo base_url('/student/show_calender')?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i>My Complains</a>
 						</li>
-						<li class="bold"><a href="<?php echo base_url('/student/companies');?>" class="waves-effect waves-cyan"><i class="mdi-communication-business"></i>Companies</a>
+						<li class="bold"><a href="<?php echo base_url('/student/companies');?>" class="waves-effect waves-cyan"><i class="mdi-communication-business"></i>All Complains</a>
 						</li>
 						<li class="bold "><a href="<?php echo base_url('/student/feedback_list')?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i>Feedback</a>
-						</li>
-						<li class="no-padding">
-							<ul class="collapsible collapsible-accordion">
-								<li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-file-folder-shared"></i>My Documents</a>
-									<div class="collapsible-body">
-										<ul>
-											<li><a href="<?php echo base_url('/student/upload/upload_files')?>">Upload Documents</a>
-											</li>
-											<li><a href="<?php echo base_url('/student/resume')?>">Auto Generate Resume</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="no-padding">
-							<ul class="collapsible collapsible-accordion">
-								<li class="bold">
-									<a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-assignment"></i> Apply </a>
-									<div class="collapsible-body">
-										<ul>
-											<li><a href="<?php echo base_url('/student/new_application')?>">New Application</a>
-											</li>
-											<li><a href="<?php echo base_url('/student/application_status')?>">Application Status</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</li>
-						<li class="bold "><a href="<?php echo base_url('/student')?>" class="waves-effect waves-cyan"><i class="mdi-alert-error"></i> Rules and Regulations</a>
 						</li>
 					</ul>
 					<a href="layout01.html#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>

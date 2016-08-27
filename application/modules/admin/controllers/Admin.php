@@ -33,9 +33,7 @@ if(!$this->ion_auth->in_group('admin'))
 		$this->load->model('admin_model');
 		$data['user']=$this->admin_model->get_user_info();
 		$data['id']=$this->ion_auth->get_user_id();
-		$data['unapproved_number'] = count($this->admin_model->get_unapproved_companies());
 		$this->load->view('admin_dash',$data);
-		$data=$this->admin_model->get_status();
 		$this->load->view('admin_main',$data);
 		$this->load->view('footer');
 	}
@@ -56,6 +54,11 @@ if(!$this->ion_auth->in_group('admin'))
 		$this->cod_model->add_news();
 	}
 
+	function create_user()
+	{
+		$data['spcls']=$this->admin_model->get_all_specializations();
+		$this->render_page("create_user",$data);
+	}
 	function auth()
 	{
 		if (!$this->ion_auth->is_admin()) // remove this elseif if you want to enable this for non-admins
