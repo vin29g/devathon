@@ -49,28 +49,20 @@
 	<body>
 		<header>
 			<nav>
-				<div class="blue nav-wrapper">
-					<ul class="left"> 
-						<li><a href="<?php echo base_url()?>" class="brand-logo darken-1"><img style="padding-top: 8%" src="<?php echo base_url('assets/images/tapslogonitw.png')?>" alt="materialize logo"></a></li>
-					</ul>
+				<div class="red nav-wrapper">
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="Home">Home<i class="material-icons right">arrow_drop_down</i></a></li>
-						<li><a href="<?php echo base_url('/main/view/academics')?>">Academic</a></li>
-						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="Recruiters">Recruiters<i class="material-icons right">arrow_drop_down</i></a></li>
-						<li><a class="dropdown-button"  data-beloworigin="true" href="#!" data-activates="Students">Students<i class="material-icons right">arrow_drop_down</i></a></li>
-						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="team">The Team<i class="material-icons right">arrow_drop_down</i></a></li>
 						<li><a href="<?php echo base_url('/main/contact_us')?>">Contact Us</a></li>
-						<!-- <li><a href="<?php echo base_url('/auth/index') ?>">Login</a></li> -->
+						<li><a href="<?php echo base_url('/auth/index') ?>">Login</a></li>
 					</ul>
 					<ul class="side-nav" id="mobile-demo">
 						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="Home1">Home<i class="material-icons right">arrow_drop_down</i></a></li>
 						<li><a href="<?php echo base_url('/main/view/academics')?>">Academic</a></li>
 						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="Recruiters1">Recruiters<i class="material-icons right">arrow_drop_down</i></a></li>
-						<li><a class="dropdown-button"  data-beloworigin="true" href="#!" data-activates="Students1">Students<i class="material-icons right">arrow_drop_down</i></a></li>
+						<li><a class="dropdown-button"  data-beloworigin="true" href="#!" data-activates="Students1">Login<i class="material-icons right">arrow_drop_down</i></a></li>
 						<li><a class="dropdown-button" data-beloworigin="true" href="#!" data-activates="team1">The Team<i class="material-icons right">arrow_drop_down</i></a></li>
 						<li><a href="<?php echo base_url('/main/contact_us')?>">Contact Us</a></li>
-						<!-- <li><a href="<?php echo base_url('/auth/index') ?>">Login</a></li> -->
+						<li><a href="<?php echo base_url('/auth/index') ?>">Login</a></li>
 					</ul>
 				</div>
 			</nav>

@@ -50,7 +50,7 @@
     <header>
         
         <nav>
-            <div class="blue nav-wrapper">
+            <div class="red nav-wrapper">
                 <ul class="left"> 
                     <li><a href="<?php echo base_url()?>" class="brand-logo darken-1"><img style="padding-top: 8%" src="<?php echo base_url('assets/images/tapslogonitw.png')?>" alt="materialize logo"></a></li>
                 </ul>
@@ -134,14 +134,13 @@
 
 
     </header>
-
+<br>
  <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
       <form class="login-form" action="login" method="POST">
         <div class="row">
           <div class="input-field col s12 center">
-            <img src="<?php echo base_url('assets/images/nitwlogoblack.png')?>" alt="" class="responsive-img  profile-image-login">
-            <p class="center login-form-text">TAPS Login Portal</p>
+             <p class="center login-form-text">CMS Login</p>
           </div>
         </div>
         <div class="row margin">
@@ -183,12 +182,9 @@
   </div>
 
 <!-- START FOOTER -->
-<footer class="blue page-footer">
+<footer class="red page-footer">
 
     <div class="row">
-      <div class="col l2 hide-on-small-only m3">
-        <img class="" width="145px" style="padding-top:10px; padding-left:30px;" src="<?php echo base_url('/assets/images/nitwlogo.png')?>">
-    </div>
     <div class="col l4 s12 m6">
         <h5 class="white-text">Training and Placement Section</h5>
         <p class="grey-text text-lighten-4">National Institute of Technology<br>Warangal - 506021, Telangana, India<br>Phone : +91-870-2462930<br>Telefax : +91-870-2459325</p>
