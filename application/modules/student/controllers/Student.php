@@ -89,6 +89,35 @@ class Student extends MX_Controller
 		$this->load->view('footer');
 	}
 
+	function complain_status()
+	{
+		$data=$this->stud_model->complain_status($this->ion_auth->get_user_id());
+		$this->_render_page('my_complains',$data);
+	}
+
+	function get_data()
+	{
+		$id=$this->ion_auth->get_user_id();
+		$res=$this->stud_model->update_comp($id);
+		$this->session->set_flashdata('message','Issue Posted');
+		$this->session->keep_flashdata('message');
+		redirect('/student');
+	}
+
+	function _render_page($page=NULL,$data=NULL)
+	{
+		/*$data['res']=$data;*/
+		$data['id']=$this->ion_auth->get_user_id();
+		$this->load->view('stud_dash',$data);
+		$this->load->view($page,$data);
+		$this->load->view('footer',$data);
+	}
+
+	function my_comp()
+	{
+		$id=$_GET['id'];
+		$data=$this->stud_model->comp_comment();
+	}
 	function help()
 	{
 		$data['user']=$this->stud_model->get_user_info();

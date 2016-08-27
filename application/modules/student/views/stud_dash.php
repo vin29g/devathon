@@ -61,10 +61,10 @@
 						<ul class="left">
 							<li><h1 class="logo-wrapper"><a href="<?php echo base_url('/student');?>" class="brand-logo darken-1">CMS</a></h1></li>
 						</ul>
-						<div class="header-search-wrapper hide-on-med-and-down">
+<!-- 						<div class="header-search-wrapper hide-on-med-and-down">
 							<i class="mdi-action-search"></i>
 							<input type="text" name="Search" id="company" class="header-search-input z-depth-2" placeholder="Search Company"/>
-						</div>
+						</div> -->
 						<ul class="right hide-on-med-and-down">                        
 							<li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
 							</li>
@@ -117,7 +117,7 @@
 						</li>
 						<li class="bold "><a href="<?php echo base_url('/student/complain_submit')?>" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Submit Complaint</a>
 						</li>
-						<li class="bold "><a href="<?php echo base_url('/student/show_calender')?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i>My Complains</a>
+						<li class="bold "><a href="<?php echo base_url('/student/complain_status')?>" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i>My Complains</a>
 						</li>
 						<li class="bold"><a href="<?php echo base_url('/student/companies');?>" class="waves-effect waves-cyan"><i class="mdi-communication-business"></i>All Complains</a>
 						</li>
