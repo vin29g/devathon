@@ -130,3 +130,4 @@ $autoload['model'] = array();
 $autoload['libraries'] = array('database','auth/ion_auth');
 $autoload['libraries'] = array('email');
 
+
