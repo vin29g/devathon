@@ -24,14 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 /*$config['base_url'] = 'http://localhost/taps';*/
-include_once('environment.php');
-
-if ($environmentValue == 'DEVELOPMENT') {
-	$config['base_url'] = 'http://localhost/devathon';
-}
-else {
-	// $config['base_url'] = 'https://wsdc.nitw.ac.in/taps1';
-}
+$config['base_url'] = 'http://localhost/devathon';
 /*
 |--------------------------------------------------------------------------
 | Index File
