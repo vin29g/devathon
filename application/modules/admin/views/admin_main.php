@@ -1,11 +1,11 @@
-<title> Admin | TAPS NITW</title>
+<title> Admin | CMS NITW</title>
 <div>
 	<div class="row">
         <div class="col s12 m4">
         	<div class="card blue darken-3">
             <div class="card-content white-text flow-text">
-              <span class="card-title">All Applications</span>
-              <div class="card-body"><?php echo "1";?></div>
+              <span class="card-title">All Complaints</span>
+              <div class="card-body"><?php echo count($comp);?></div>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
         <div class="col s12 m4">
           <div class="card blue darken-3">
             <div class="card-content white-text flow-text">
-              <span class="card-title">Approved</a><small>  Co-ordinator</small></span>
+              <span class="card-title">Approved</a><small></small></span>
               <div class="card-body" id="apc"></div>
             </div>
           </div>
@@ -28,92 +28,65 @@
       </div>
 	<hr>
 	<div class="row">
-		<div class="col s10">
-			<h5>Approved by Co-ordinator</h5>
-			<p><blockquote>Note:Following table is gpa verified filtered by you</blockquote></p>
-			<p>First verify GPA</p>
-		</div>
-		<div class="col s2" style="padding:1em;">Current Round
-		</div>
+<!-- 		<div class="col s10">
+			<?php foreach ($comp as $result) { ?>
+				<?php print_r($result);?>
+			<?php }?>
+		</div> -->
 	</div>
 	<div id="table-datatables">
-<!--  -->
-	<!-- Modal Structure for approved admin -->
-	<div id="modal2" class="modal modal-fixed-footer">
-		<div class="modal-content">
-
-	 </div>
- </div>
+			<form action="<?php echo base_url();?>admin/assign_it" method="post">
+                <table id="tab" class="responsive-table display" cellspacing="0" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                        <th data-field="id" id="eli">Complain Id</th>
+                        <th data-field="name">Description</th>
+                        <th data-field="name">Approval status</th>
+                        <th data-field="branch">Asked by</th>
+                        <th data-field="reg">Status</th>
+                        <th data-field="reg">Assign</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php foreach ($comp as $result) {?>
+                    <tr>
+                      <td><?php echo $result['id']; ?></td>
+                      <td><?php echo $result['description']  ?></td>
+                      <td><?php switch ($result['approval']) {
+                        case 1:
+                          echo "Approved";
+                          break;
+                        case 0:
+                          echo "Not Approved";
+                         break;
+                        case 2:
+                          echo "Completed";
+                          break;
+                      }?></td>
+                      <td><?php echo $result['complainBy']  ?></td>
+                      <td><?php echo $result['status']  ?></td>
+                      <td>
+						<select id="assign" name="<?php echo $result['id']; ?>" class="browser-default" <?php if($result['approval']==2) echo "disabled";?>>
+						<option value="none" selected>Select</option>
+						<?php foreach($assignee as $ass){ ?>
+						<option value="<?php echo $ass['name'];?>"><?php echo $ass['description'];?></option>
+						<?php } ?>
+						</select>
+                      </td>
+                    </tr>
+                   <?php } ?>
+                  </tbody> 
+                </table>
+    			<button class="btn waves-effect waves-light" type="submit" name="action" value="1" id="submit" center>Submit</button>
+              </form>
+                </div>
+      </div>
+    </div>
+  </div>   
 
 <script type="text/javascript">
-	$(document).ready(function()
-	{
-		$("#tab").DataTable();
-	});
+  $(document).ready(function()
+  {
+    $("#tab").DataTable();
+  });
 </script>
-<!-- 
-<script type="text/javascript">
-//test
-function approve(y)
-{
-var z=".status"+y;
-$.ajax(
-	{
-		url: '<?php echo base_url("/admin/approve_application");?>',
-		dataType: 'json',
-    	cache: false,
-		data:
-		{
-			id:y
-		},
-		type:"POST",
-				success: function(data) {
-				$("#apa").html(data.m1);
-				$(z).html(data.m2);
-    }
-
-
-	});
- }
- function dismiss(y)
-{
-var z=".status"+y;
-$.ajax(
-	{
-		url: '<?php echo base_url("/admin/dismissed_application");?>',
-		dataType: 'json',
-    	cache: false,
-		data:
-		{
-			id:y
-		},
-		type:"POST",
-				success: function(data) {
-				$(z).html(data.m2);
-    }
-
-
-	});
- }
-
- function revert(y)
- {
- 	var z=".status"+y;
- 	$.ajax(
-	{
-		url: '<?php echo base_url("/admin/revert");?>',
-		dataType:'json',
-		cache:false,
-		data:
-		{
-			id:y
-		},
-		type:"POST",
-		success: function(data) {
-		$('#apa').html(data.rm1);
-		$(z).html(data.rm2);
-    }
-	});
- }
-</script>
- -->

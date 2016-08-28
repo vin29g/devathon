@@ -29,16 +29,6 @@ class Student extends MX_Controller
 		
 	}
 
-	function application_status()
-	{
-		$data=$this->stud_model->get_user_info();
-		$data['id']=$this->ion_auth->get_user_id();
-		$this->load->view('stud_dash',$data);
-		$data=$this->stud_model->app_status($data['id']);
-		$this->load->view('application_status',$data);
-		$this->load->view('footer',$data);
-	}
-
 	function post_data()
 	{
 		$data=$this->stud_model->get_user_info();
@@ -117,63 +107,10 @@ class Student extends MX_Controller
 	{
 		$id=$_GET['id'];
 		$data=$this->stud_model->comp_comment();
-	}
-	function help()
-	{
-		$data['user']=$this->stud_model->get_user_info();
-		$data['id']=$this->ion_auth->get_user_id();
-		$this->load->view('stud_dash',$data);
-		$data=$this->stud_model->help_reply();
-		$this->load->view('help',$data);
-		$this->load->view('footer',$data);
-	}
-
-	function stud_help()
-	{
-		$data=$this->stud_model->get_profile_info();
-			$data['id']=$this->ion_auth->get_user_id();
-			$this->load->view('stud_dash',$data);
-		$this->load->view('stud_help',$data);
-		$this->load->view('footer',$data);
-	}
-
-	function deactivate_req()
-	{
-		$id=$this->ion_auth->get_user_id();
-		$this->stud_model->deactivate_req($id);
-		$this->ion_auth->logout();
-		redirect('/auth/login/','refresh');
-	}
-
-	function getSpecialization()
-	{
-		$data=$this->stud_model->get_specialized($this->input->post('branch'));
-		echo "<option value=''>"."None"."</option>";
-		foreach ($data as $key => $value)
-		{
-			$id=$value['id'];
-			echo "<option value='$id'>".$value['name']."</option>";
-		}
+		$this->_render_page('my_comp_com',$data);
 	}
 	//search direction to be discussed
 	function search()
 	{}
 
-	function stud_help_temp()
-	{
-		$data=$this->stud_model->get_profile_info();
-			$data['id']=$this->ion_auth->get_user_id();
-			$this->load->view('stud_dash_temp',$data);
-		$this->load->view('stud_help',$data);
-		$this->load->view('footer',$data);
-	}
-
-	function profile_temp()
-	{
-		$data=$this->stud_model->get_profile_info();
-		$data['id']=$this->ion_auth->get_user_id();
-		$this->load->view('stud_dash_temp',$data);
-		$this->load->view('student_profile',$data);
-		$this->load->view('footer',$data);
-	}
 }

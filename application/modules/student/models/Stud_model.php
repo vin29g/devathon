@@ -36,9 +36,13 @@ class Stud_model extends CI_Model
 
 	function comp_comment()
 	{
-
+		$id=$_GET['id'];
+		$q="SELECT comment.* from comment where id='$id'";
+		$res=$this->db->query($q)->result_array();
+		$data['res']=$res;
+		return $data;
 	}
-	
+
 	function update_comp($id=NULL)
 	{
 		$date=date("Y-m-d");
@@ -62,11 +66,11 @@ class Stud_model extends CI_Model
 			}
 		}
 		$cid=$_POST['complain_id'];
-		$q="SELECT * from complain,users_data where users_data.first_name=complain.complainBy and complain.compId=$cid";
-		if(count($this->db->query($q)->row_array())>0)
-		{
-			return 0;
-		}
+		// $q="SELECT * from complain,users_data where users_data.first_name=complain.complainBy and complain.compId=$cid";
+		// if(count($this->db->query($q)->row_array())>0)
+		// {
+		// 	return 0;
+		// }
 		$data['id']=$comp;
 		$data['compId']=$cid;
 		$data['dateTime']=date("Y-m-d H:i:s");

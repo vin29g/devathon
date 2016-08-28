@@ -57,7 +57,7 @@ class Auth extends CI_Controller {
 			foreach ($data['users'] as $k => $user)
 			{
 				$roll=$this->ion_auth_model->get_users_roll($user->id)->result_array();
-				$data['users'][$k]->rollno =$roll[0]["roll_number"] ;
+				//$data['users'][$k]->rollno =$roll[0]["roll_number"] ;
 				$data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 			$data['user']=$this->admin_model->get_user_info();

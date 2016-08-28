@@ -10,7 +10,6 @@
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Email</th>
-		<th>Roll Number</th>
 		<th>Groups</th>
 		<th><?php echo lang('index_status_th');?></th>
 		<th><?php echo lang('index_action_th');?></th>
@@ -22,7 +21,7 @@
             <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
             <td><?php echo htmlspecialchars($user->last_name,ENT_QUOTES,'UTF-8');?></td>
             <td><?php echo htmlspecialchars($user->email,ENT_QUOTES,'UTF-8');?></td>
-            <td><?php echo $user->rollno ?></td>
+<!--             <td><?php echo $user->rollno ?></td> -->
 			<td>
 				<?php foreach ($user->groups as $group):?>
 					<?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8')) ;?><br />

@@ -89,12 +89,8 @@
 				<nav class="cyan">
 					<div class="nav-wrapper">
 						<ul class="left">
-						  <li><h1 class="logo-wrapper"><a href="<?php echo base_url('/cod');?>" class="brand-logo darken-1">TAPS</a></h1></li>
+						  <li><h1 class="logo-wrapper"><a href="<?php echo base_url('/cod');?>" class="brand-logo darken-1">CMS</a></h1></li>
 						</ul>
-						<div class="header-search-wrapper hide-on-med-and-down">
-							<i class="mdi-action-search"></i>
-							<input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore TAPS"/>
-						</div>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
 							</li>
@@ -150,73 +146,18 @@
 								<i class="mdi-action-home"></i>Home
 							</a>
 						</li>
-						<li class="bold">
-							<a href="<?php echo base_url('/cod/show_calender')?>" class="waves-effect waves-cyan">
-								<i class="mdi-editor-insert-invitation"></i>Calender
-							</a>
+						<?php if($this->ion_auth->in_group('wsdc_cod')){ ?>
+						<li><a href="<?php echo base_url('/cod/wsdc')?>"><i class="mdi-action-account-child"></i> WSDC Coordinator</a>
 						</li>
-						<li class="no-padding">
-							<ul class="collapsible collapsible-accordion">
-								<li class="bold">
-									<a class="collapsible-header waves-effect waves-cyan"><i class="mdi-communication-business"></i>Companies
-									</a>
-									<div class="collapsible-body">
-										<ul>
-											<li><a href="<?php echo base_url('/cod/all_companies')?>">All Companies</a>
-											</li>                                        
-											<li><a href="<?php echo base_url('/cod/add_company')?>">Add Company</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li class="bold">
-									<a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-work"></i>Company Visits</a>
-									<div class="collapsible-body">
-										<ul>
-											<li><a href="<?php echo base_url('/cod/all_visits')?>">All Company Visits</a>
-											</li>
-											<li><a href="<?php echo base_url('/cod/add_visit')?>">Add Company Visit</a>
-											</li>
-										</ul>
-									</div>
-								</li>
-								<li class="bold">
-									<a class="collapsible-header waves-effect waves-cyan"><i class="mdi-hardware-cast"></i>News Feed</a>
-									<div class="collapsible-body">
-										<ul>
-											<li><a href="<?php echo base_url('/cod/show_news_feed_form')?>">Add News </a>
-									</li>                                        
-								   
-									<li><a href="<?php echo base_url('/cod/show_all_news')?>">Show All News</a>
-									</li>
-										</ul>
-									</div>
-								</li>
-								<li class="bold">
-									<a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-autorenew"></i>Rounds</a>
-									<div class="collapsible-body">
-										<ul>
-											<li><a href="<?php echo base_url('/cod/round')?>" class="waves-effect waves-cyan">Round Details</a>
-											</li>
-											<li><a href="<?php echo base_url('/cod/show_modify_round_visits')?>">Modify Round Details</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</li>
-
-						<li class="bold"><a href="<?php echo base_url('/cod/profilelock') ?>" class="waves-effect waves-cyan"><i class="mdi-action-lock-open"></i> User Profile-Lock</a>
-						</li>
-						<li class="bold">
-							<a href="<?php echo base_url('/cod/report')?>" class="waves-effect waves-cyan">
-								<i class="mdi-action-assessment"></i>Report Generation
-							</a>
-						</li>
-						<li class="bold">
-							<a href="<?php echo base_url('/cod/sms')?>" class="waves-effect waves-cyan">
-								<i class="mdi-content-markunread"></i>SMS
-							</a>
-						</li>
+						<?php } ?>
+				<?php if($this->ion_auth->in_group('lan_cod')){ ?>
+					<li><a href="<?php echo base_url('/cod/lan')?>"><i class="mdi-action-account-child"></i>  Lan Coordinator</a>
+					</li>
+				<?php } ?>
+				<?php if($this->ion_auth->in_group('mess_cod')){ ?>
+					<li><a href="<?php echo base_url('/cod/mess')?>"><i class="mdi-action-account-child"></i>  Mess Coordinator</a>
+					</li>
+				<?php } ?>
 					</ul>
 					<a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
 				</aside>

@@ -4,28 +4,37 @@ class Cod extends MX_Controller
 {
 	function __construct()
 	{
-
-
-
-
 		parent::__construct(); 
 		$this->load->model('cod_model');
 		$this->load->helper('date');
 		$this->load->library('auth/ion_auth');
 		if(!$this->ion_auth->logged_in())
 			redirect('/auth/login/','refresh');
-		if(!$this->ion_auth->in_group('cod'))
-			redirect('/student/','refresh');
-
 	}
 
 	function index()
 	{
-		
-  //$this->_render_page('add_visit',$data);
-		$this->add_visit();
+		$data=NULL;
+		$this->_render_page('info',$data);
+	}
+
+	function lan()
+	{
+		$data['data']=$this->cod_model->lan();
+		$this->_render_page('view_details',$data);
+	}
+
+	function mess()
+	{
+		$data['data']=$this->cod_model->mess();
+		$this->_render_page('view_details',$data);
 	}
 	
+	function grab()
+{
+	$data['grab']=$this->cod_model->grab();
+	redirect('/cod','refresh');
+}
 function _render_page($view, $data=null)
 {
 	$data['user']=$this->cod_model->get_user_info();

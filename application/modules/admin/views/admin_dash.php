@@ -110,8 +110,10 @@
                                     <?php if($this->ion_auth->in_group('admin')||$this->ion_auth->in_group('cod')){ ?>
                                     <li><a href="<?php echo base_url('/student')?>"><i class="mdi-social-school"></i>Stud</a>
                                     </li>
-                                    <li><a href="<?php echo base_url('/cod')?>"><i class="mdi-social-people"></i>COD</a>
+                                    <?php if($this->ion_auth->in_group('wsdc_cod')||$this->ion_auth->in_group('mess_cod')||$this->ion_auth->in_group('water_cod')||$this->ion_auth->in_group('lan_cod')){ ?>
+                                    <li><a href="<?php echo base_url('/cod')?>"><i class="mdi-action-account-child"></i>COD</a>
                                     </li>
+                                    <?php } ?>
                                     <?php if($this->ion_auth->in_group('admin')){ ?>
                                     <li><a href="<?php echo base_url('/admin')?>"><i class="mdi-hardware-security"></i> Admin</a>
                                     </li>
@@ -154,54 +156,14 @@
                                 <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-account-child"></i> Users management</a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="<?php echo base_url('admin/create_user')?>" class="waves-effect waves-cyan">
+                                        <li><a href="<?php echo base_url('auth/create_user')?>" class="waves-effect waves-cyan">
                                             <i class="mdi-social-person-add"></i>Create User</a>
                                         </li>
                                         <li><a href="<?php echo base_url('auth/manageuser')?>" class="waves-effect waves-cyan">
                                             <i class="mdi-action-settings"></i>Edit User</a>
                                         </li>
-                                        <li><a href="<?php echo base_url('/admin/upload_stud_list_view')?>" class="waves-effect waves-cyan">
-                                            <i class="mdi-file-file-upload"></i>Upload Student List</a>
-                                        </li>
                                          <li><a href="<?php echo base_url('/admin/send_activation')?>" class="waves-effect waves-cyan">
                                             <i class="mdi-communication-email"></i>Send Activation</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="no-padding">
-                        <ul class="collapsible collapsible-accordion">
-                            <li class="bold">
-                                <a class="collapsible-header waves-effect waves-cyan"><i class="mdi-action-spellcheck"></i>GPA verification
-                                </a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li><a href="<?php echo base_url('admin/get_gpa_table')?>/0">Pending</a>
-                                        </li>
-                                        <li><a href="<?php echo base_url('admin/get_gpa_table')?>/-1">Dismissed</a>
-                                        </li>
-                                        <li><a href="<?php echo base_url('admin/get_gpa_table')?>/1">Approved</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="bold">
-                        <a href="<?php echo base_url('/cod/sms')?>" class="waves-effect waves-cyan">
-                            <i class="mdi-content-markunread"></i>SMS
-                        </a>
-                    </li>
-                    <li class="no-padding">
-                        <ul class="collapsible collapsible-accordion">
-                            <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-file-cloud-download"></i>Downloads</a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li><a href="<?php echo base_url('admin/sql_download')?>">Download sql file</a>
-                                        </li>
-                                        <li><a href="<?php echo base_url('admin/assets_download')?>">Download assets folder</a>
                                         </li>
                                     </ul>
                                 </div>

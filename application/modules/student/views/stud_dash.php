@@ -95,16 +95,18 @@
 										</li>
 										<li><a href="<?php echo base_url('/student/stud_help')?>"><i class="mdi-communication-live-help"></i>Help</a>
 										</li>
-										<?php if($this->ion_auth->in_group('admin')||$this->ion_auth->in_group('cod')){ ?>
-										<li><a href="<?php echo base_url('/student')?>"><i class="mdi-social-school"></i>Stud</a>
-										</li>
-										<li><a href="<?php echo base_url('/cod')?>"><i class="mdi-social-people"></i>COD</a>
-										</li>
-										<?php if($this->ion_auth->in_group('admin')){ ?>
-										<li><a href="<?php echo base_url('/admin')?>"><i class="mdi-hardware-security"></i>Admin</a>
-										</li>
-										<?php } ?>
-										<?php } ?>
+									<?php if($this->ion_auth->in_group('admin')||$this->ion_auth->in_group('cod')){ ?>
+                                    <li><a href="<?php echo base_url('/student')?>"><i class="mdi-social-school"></i>Stud</a>
+                                    </li>
+                                    <?php if($this->ion_auth->in_group('wsdc_cod')||$this->ion_auth->in_group('mess_cod')||$this->ion_auth->in_group('water_cod')||$this->ion_auth->in_group('lan_cod')){ ?>
+                                    <li><a href="<?php echo base_url('/cod')?>"><i class="mdi-action-account-child"></i>COD</a>
+                                    </li>
+                                    <?php } ?>
+                                    <?php if($this->ion_auth->in_group('admin')){ ?>
+                                    <li><a href="<?php echo base_url('/admin')?>"><i class="mdi-hardware-security"></i> Admin</a>
+                                    </li>
+                                    <?php } ?>
+                                    <?php } ?>
 										<li class="divider">
 										</li>
 										<li><a href="<?php echo base_url('auth/logout')?>"><i class="mdi-hardware-keyboard-tab"></i>Logout</a>

@@ -34,7 +34,7 @@
             <?php echo lang('create_user_email_label', 'email');?> <br />
             <?php echo form_input($email);?>
       </p>
-
+      
       <p>
             <?php echo lang('create_user_phone_label', 'phone');?> <br />
             <?php echo form_input($phone);?>
